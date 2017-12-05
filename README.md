@@ -346,6 +346,16 @@ Example usage:
 var sp = supercrawler.handlers.sitemapsParser();
 crawler.addHandler(supercrawler.handlers.sitemapsParser());
 ```
+To only include URLs that match a specific pattern in the Sitemap, use the following
+
+```js
+crawler.addHandler(supercrawler.handlers.sitemapsParser({
+  urlFilter: function (url) {
+    return url.indexOf("exclude") === -1;
+  }
+}))
+```
+
 
 ## Changelog
 
